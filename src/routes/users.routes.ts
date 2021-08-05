@@ -15,43 +15,35 @@ const upload = multer(uploadsConfig);
 type UserPreview = Partial<User>
 
 usersRouter.post('/', async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
+  const { name, email, password } = req.body;
 
-    const createUser = new CreateUserService();
+  const createUser = new CreateUserService();
 
-    const user: UserPreview = await createUser.execute({
-      name,
-      email,
-      password
-    })
+  const user: UserPreview = await createUser.execute({
+    name,
+    email,
+    password
+  })
 
-    delete user.password;
+  delete user.password;
 
-    return res.json(user);
-  } catch (err) {
-    return res.status(400).json({ error: err.message });
-  }
+  return res.json(user);
 });
 
 usersRouter.patch('/avatar', 
   ensureAuthenticated, 
   upload.single('avatar'), 
   async ( req, res ) => {
-    try {
-      const updateUserAvatar = new UpdateUserAvatarService();
+    const updateUserAvatar = new UpdateUserAvatarService();
 
-      const user: UserPreview = await updateUserAvatar.execute({
-        user_id: req.user.id,
-        avatarFilename: req.file.filename,
-      })
+    const user: UserPreview = await updateUserAvatar.execute({
+      user_id: req.user.id,
+      avatarFilename: req.file.filename,
+    })
 
-      delete user.password;
+    delete user.password;
 
-      return res.status(200).json(user);
-    } catch (err) {
-      return res.status(400).json({ error: err.message });
-    }
+    return res.status(200).json(user);
 });
 
 export default usersRouter;
