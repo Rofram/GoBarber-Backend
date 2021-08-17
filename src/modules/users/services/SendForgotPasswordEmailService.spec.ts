@@ -43,11 +43,11 @@ describe('SendForgotPasswordEmailService', () => {
   it('should throw an error if the email is not found', async () => {
     const sendMail = jest.spyOn(fakerMailProvider, 'sendMail');
 
-    expect(
+    await expect(
       sendForgotPasswordEmailService.execute({
         email: 'wrong-email'
       })
-    ).rejects.toThrow(AppError);
+    ).rejects.toBeInstanceOf(AppError);
     
     expect(sendMail).not.toHaveBeenCalled();
   });
