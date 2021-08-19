@@ -21,13 +21,13 @@
 
 **RF**
 
-- O usuário deve poder atualizar seu nome, email e senha;
+- O usuário deve poder atualizar seu nome, email e senha; 🆗
 
 **RN**
 
-- O usuário não pode alterar seu email já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário deve confirmar sua senha;
+- O usuário não pode alterar seu email já utilizado; 🆗
+- Para atualizar sua senha, o usuário deve informar a senha antiga; 🆗
+- Para atualizar sua senha, o usuário deve confirmar sua senha; 🆗
 
 # Agendamento de serviços
 

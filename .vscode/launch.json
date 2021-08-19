@@ -11,7 +11,9 @@
       "restart": true,
       "name": "Debug",
       "skipFiles": [
-        "<node_internals>/**"
+        "<node_internals>/**",
+        "<node_modules>/**",
+        "<coverage>/**"
       ],
       "outFiles": [
         "${workspaceFolder}/**/*.js"

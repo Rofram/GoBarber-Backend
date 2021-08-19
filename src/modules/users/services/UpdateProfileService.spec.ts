@@ -111,7 +111,7 @@ describe('UpdateProfileService', () => {
     const user = await fakeUsersRepository.create({
       name: 'test',
       email: 'test@test.com',
-      password: 'test',
+      password: 'test123',
     });
 
     await expect(

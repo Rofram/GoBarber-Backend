@@ -45,7 +45,7 @@ class UpdateProfileService {
 
     if (oldPassword) {
       const hash = await this.hashProvider.generateHash(oldPassword);
-      const isPasswordValid = this.hashProvider.compareHash(user.password, hash);
+      const isPasswordValid = await this.hashProvider.compareHash(user.password, hash);
 
       if (!isPasswordValid) {
         throw new AppError('Old password is incorrect', 401);
