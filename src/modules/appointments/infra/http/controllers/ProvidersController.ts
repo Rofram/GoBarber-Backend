@@ -14,6 +14,5 @@ export default class ProvidersController {
     })
 
     return res.json(providers);
-    
   }
 }
