@@ -54,7 +54,7 @@
 
 **RF**
 
-- O usuário deve poder listar seus agendamentos de um dia especifico;
+- O usuário deve poder listar seus agendamentos de um dia especifico; 🆗
 - O prestador deve receber uma notificação sempre que houver um novo agendamento;
 - O prestador deve poder visualizar as notificações não lidas;
 
