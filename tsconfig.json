@@ -5,7 +5,8 @@
     "outDir": "./dist",                              
     "rootDir": "./src",                             
     "strict": true,                                 
-    "strictPropertyInitialization": false,          
+    "strictPropertyInitialization": false,    
+    "allowJs": true,
     "baseUrl": "./src",                             
     "paths": {
       "@modules/*": ["modules/*"],
