@@ -1,14 +1,9 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 
-import User from '@modules/users/infra/typeorm/entities/User';
-
-interface SessionPreview {
-  user: Partial<User>;
-  token: string;
-}
 
 export default class SessionsController {
   public async create(req: Request, res: Response): Promise<Response> {
@@ -16,13 +11,11 @@ export default class SessionsController {
   
     const authenticateUser = container.resolve(AuthenticateUserService);
 
-    const { user, token }: SessionPreview = await authenticateUser.execute({
+    const { user, token } = await authenticateUser.execute({
       email,
       password
     });
 
-    delete user.password;
-
-    return res.json({ user, token });
+    return res.json({ user: classToClass(user), token });
   }
 }
