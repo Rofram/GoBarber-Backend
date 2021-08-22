@@ -18,7 +18,7 @@ type IResponse = Array<{
 @injectable()
 class ListProviderMonthAvailabilityService {
   constructor(
-    @inject('AppointmentRepository') private appointmentsRepository: IAppointmentsRepository,
+    @inject('AppointmentsRepository') private appointmentsRepository: IAppointmentsRepository,
   ) { }
 
   public async execute({ provider_id, year, month }: Request): Promise<IResponse> {

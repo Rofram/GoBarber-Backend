@@ -4,6 +4,7 @@ export class AlterProviderToProviderId1618879240644 implements MigrationInterfac
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropColumn('appointments', 'provider');
+
         await queryRunner.addColumn('appointments', new TableColumn({
             name: 'provider_id',
             type: 'uuid',
@@ -28,5 +29,4 @@ export class AlterProviderToProviderId1618879240644 implements MigrationInterfac
             type: 'varchar',
         }));
     }
-
 }
