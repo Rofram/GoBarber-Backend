@@ -9,13 +9,13 @@
 **RNF**
 
 - Utilizar Ethereal para testar envios em ambiente dev; 🆗
-- Utilizar Amazon SES para envios de email em ambiente de produção;
+- Utilizar Amazon SES para envios de email em ambiente de produção; 🆗
 - O envio de e-mails deve acontecer em segundo plano (background job);
 
 **RN**
 
 - O link enviado por email para resetar senha, deve expirar em 2h; 🆗
-- O usuário precisa confirmar a nova senha ao resetar a mesma;
+- O usuário precisa confirmar a nova senha ao resetar a mesma; 🆗
 
 # Atualização do perfil
 
