@@ -23,7 +23,7 @@ interface IUploadConfig {
 }
 
 export default {
-  driver: process.env.STORAGE_DRIVER,
+  driver: process.env.STORAGE_DRIVER || 'disk',
 
   tmpFolder,
   uploadsFolder: path.resolve(tmpFolder, 'uploads'),
@@ -43,7 +43,7 @@ export default {
   config: {
     disk: {},
     aws: {
-      bucket: 'app-gobarber-rofran-2',
+      bucket: process.env.AWS_BUCKET,
     },
   },
 } as IUploadConfig;

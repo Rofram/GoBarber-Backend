@@ -1,4 +1,4 @@
-import { container } from 'tsyringe';
+import { container, delay } from 'tsyringe';
 import uploadConfig from '@config/upload';
 
 import IStorageProvider from "./models/IStorageProvider";
@@ -13,5 +13,5 @@ const providers = {
 
 container.registerSingleton<IStorageProvider>(
   "StorageProvider", 
-  providers[uploadConfig.driver],
+  delay(() => providers[uploadConfig.driver])
 );
